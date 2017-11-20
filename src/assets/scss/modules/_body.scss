@@ -1,0 +1,53 @@
+/* -----------------------------
+Overwrite
+-------------------------------- */
+.main-wrap {
+    width: 100% !important;
+}
+.inner-container {
+    max-width: 1170px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
+.tabs-panel {
+    padding: 0;
+}
+.accordion-title {
+    color: #007ca5;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.accordion-item p {
+    display: none;
+}
+.accordion-item.is-active .accordion-title {
+    background-color: white !important;
+}
+.main-wrap, .main-wrap .main-content-full-width {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+#about {
+    border-bottom: solid 1px #ddd;
+    border-top: solid 1px #ddd;
+}
+#faqs .small-12 .tabs {
+    border: none;
+    font-family: 'Titillium Web', arial, sans-serif;
+    font-weight: 700;
+}
+#faqs .small-12.columns p {
+    display: none;
+}
+#post-19, #post-21 {
+    header {
+        display: none;
+    }
+}
+#about, #faqs {
+    padding-bottom: 65px;
+    padding-top: 40px;
+}

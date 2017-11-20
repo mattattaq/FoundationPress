@@ -65,10 +65,13 @@
 @import "global/wp-overrides";
 
 // Modules
+@import "modules/header";
 @import "modules/navigation";
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editor-style";
+@import "modules/body";
+
 
 // Components
 @import "components/buttons";
