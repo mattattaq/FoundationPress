@@ -24,6 +24,10 @@ html, textare {
 #nav ul {
 	list-style: none;
 }
+.nav-switch.active {
+	color: #fb9833 !important;
+}
+
 /* header over 800px */
 @media screen and (min-width: 800px) {
 	.tabs {

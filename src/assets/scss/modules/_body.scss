@@ -1,6 +1,11 @@
 /* -----------------------------
 Overwrite
 -------------------------------- */
+html,body {
+    overflow: auto;
+    height: auto;
+    position: relative;
+}
 .main-wrap {
     width: 100% !important;
 }

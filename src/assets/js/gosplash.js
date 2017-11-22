@@ -1,3 +1,11 @@
+//offset
+$('.nav-switch').click(function () {
+    var divID = '#' + this.id;
+    $('html, body').animate({
+        scrollTop: $(divID).offset().top
+    }, 100);
+})
+
 $("#collapsedmenu").click(function toCollapse(){
     
     var menu = window.document.getElementById("collapsedmenu");
@@ -15,11 +23,40 @@ $("#collapsedmenu").click(function toCollapse(){
 });
 
 $(document).ready(function () {
+    //smooth scroll
+    var scrollLink = $('.scroll');
+    // Smooth scrolling
+    scrollLink.click(function(e) {
+      e.preventDefault();
+      $('body,html').animate({
+        scrollTop: $(this.hash).offset().top - 130
+      }, 1000 );
+    });
+
+    document.addEventListener('scroll', function (event) {
+        // console.log('fired');
+        var scrollPos = $(document).scrollTop();
+        $('.nav-switch').each(function() {
+            var currLink = $(this);
+            console.log($(this), "this");
+            var refElement = $(currLink.attr("href"));
+            // console.log(refElement, "refElement");
+            if( refElement.position().top - 135 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('#mainmenu ul li a').removeClass("active");
+                currLink.addClass("active");
+            } else {
+                currLink.removeClass("active");
+            }
+        });
+    });
+    
+    //if the index of the url contains /de -> load german text
     if(window.location.href.indexOf("/de") > -1) {
         $("#lang-flavours").text('Geschmacks­richtungen');
         $("#lang-about").text('Über Go Splash');
         $("#lang-contact").text('Kontakt');
     }
+    //if the index of the url contains en_ -> navigate to english index
     if(window.location.href.indexOf("en_") > -1) {
         $(".nav-switch").each(function() {
             $(".nav-switch").attr('href', function(i, existingLink) {
@@ -27,6 +64,7 @@ $(document).ready(function () {
             });
         });
     };
+    //if the index of the url contains de_ -> navigate to german index
     if(window.location.href.indexOf("de_") > -1) {
         $(".nav-switch").each(function() {
             $(".nav-switch").attr('href', function(i, existingLink) {

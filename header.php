@@ -15,6 +15,8 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 		<?php wp_head(); ?>
 		
 	</head>
@@ -39,24 +41,25 @@
 					<span></span>
 					<span></span>
 				</div>
-				<div id="mainmenu">
+				<div id="mainmenu" role="nav">
+					<ul>
 					<li>
-						<a href="#flavours" class="nav-switch" id="lang-flavours">
+						<a href="#flavours" class="nav-switch scroll" id="lang-flavours" data-target="#flavours">
 							Flavours
 						</a>
 					</li>
 					<li>
-						<a href="#about" class="nav-switch" id="lang-about">
+						<a href="#about" class="nav-switch scroll" id="lang-about" data-target="#about">
 							About
 						</a>
 					</li>
 					<li >
-						<a href="#faq" class="nav-switch" id="lang-faq">
+						<a href="#faq" class="nav-switch scroll" id="lang-faq" data-target="#faq">
 							FAQ
 						</a>
 					</li>
 					<li>
-						<a href="#contact" class="nav-switch" id="lang-contact">
+						<a href="#contact" class="nav-switch scroll" id="lang-contact" data-target="#contact">
 							Contact
 						</a>
 					</li>
