@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
 import './gosplash.js';
+// import './slider.js';
 
 window.$ = $;
 
@@ -10,5 +11,6 @@ import Foundation from 'foundation-sites';
 //import './lib/foundation-explicit-pieces';
 
 import './lib/demosite';
+import './lib/jquery.waterwheelCarousel.min.js';
 
 $(document).foundation();

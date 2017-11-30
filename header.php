@@ -14,9 +14,8 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
-		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script> -->
 		<?php wp_head(); ?>
 		
 	</head>
@@ -77,4 +76,13 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div class="container">
+	<div class="container" id="flavours">
+		<?php // include 'slider.php'; ?>
+		<?php include 'flavour/views/flavour.php'?>
+		<?php
+		if(wp_is_mobile() ) {
+			get_template_part('flavour/views/flavour_mobile.php');
+		} else {
+			get_template_part('flavour/views/flavour.php');
+		}
+		?>

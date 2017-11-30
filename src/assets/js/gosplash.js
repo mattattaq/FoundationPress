@@ -34,13 +34,10 @@ $(document).ready(function () {
     });
 
     document.addEventListener('scroll', function (event) {
-        // console.log('fired');
         var scrollPos = $(document).scrollTop();
         $('.nav-switch').each(function() {
             var currLink = $(this);
-            console.log($(this), "this");
             var refElement = $(currLink.attr("href"));
-            // console.log(refElement, "refElement");
             if( refElement.position().top - 135 <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
                 $('#mainmenu ul li a').removeClass("active");
                 currLink.addClass("active");

@@ -17,6 +17,7 @@ get_header(); ?>
 
 <div class="main-wrap">
 	<main class="main-content">
+		Test
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>

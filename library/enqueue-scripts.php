@@ -32,12 +32,13 @@ function foundationpress_asset_path( $filename ) {
 }
 endif;
 
-
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
-
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet',  get_template_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.10.4', 'all' );
+
+		//Enqueue the slider stylesheet
+		wp_enqueue_style('slider_stylesheet', get_template_directory_uri() . '/assets/css/styles.css');
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
@@ -45,12 +46,23 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
 		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
 
+		wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', null, null, true);
+		wp_enqueue_script('touchswipe');
+
+		wp_register_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js', null, null, true);
+		wp_enqueue_script('tweenmax');
+
 		// Enqueue Founation scripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path('app.js'), array( 'jquery' ), '2.10.4', true );
 
+		//Enqueue javascript
+		wp_register_script('slider', get_template_directory_uri() . '/assets/js/scripts.js');
+		wp_enqueue_script('slider');
+		
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you don't need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
 
+		
 
 		// Add the comment-reply library on pages where it is necessary
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -58,6 +70,54 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		}
 
 	}
+	// Enqueue google font.
+	wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Titillium+Web');
+	wp_enqueue_style('googlefonts');
+
+	add_action('wp_enqueue_scripts', 'load_fonts');
 
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
+
+function load_fonts() {
+	
+}
+function wp_request_localize_my_json_data() {
+	
+		// Helpers to define the $url path
+		//$protocol = is_ssl() ? 'https' : 'http';
+		$directory = trailingslashit( get_template_directory_uri() );
+	
+		// Define the URL
+		$url = $directory . 'flavourObject.json';
+	
+		// Register main js file to be enqueued
+		wp_register_script( 'flavourObject-json', $directory . 'flavour/views/flavourObject.js', array('jquery'), false, true  );
+	
+		// Make the request
+		$request = wp_remote_get( $url );
+	
+		// If the remote request fails, wp_remote_get() will return a WP_Error, so let’s check if the $request variable is an error:
+		if( is_wp_error( $request ) ) {
+			echo ("<script type='text/javascript'>
+			window.alert('bailed!')
+			</script>");
+			return false; // Bail early
+		}
+	
+		// Retrieve the data
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+	
+		// Localize script exposing $data contents
+		wp_localize_script( 'flavourObject-json', 'flavourObjectJSON', array( 
+				'flavourk_url' => admin_url( 'admin-ajax.php' ),
+				'full_data' => $data
+			)
+		);
+	
+	   // Enqueues main js file
+		wp_enqueue_script( 'flavourObject-json' );
+	
+	}
+	add_action( 'wp_enqueue_scripts', 'wp_request_localize_my_json_data', 10);
