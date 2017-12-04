@@ -53,3 +53,8 @@ require_once( 'library/responsive-images.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+
+function debug($msg) {
+    $msg = str_replace('"', '\\"', $msg); // Escaping double quotes 
+     echo "<script>console.log(\"$msg\")</script>";
+}

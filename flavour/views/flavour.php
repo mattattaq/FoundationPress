@@ -1,3 +1,4 @@
+<?php include 'flavourObject.php'?>
 <h1>Select your flavour</h1>
 <div class="background">
 	<img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation-background.jpg" />
@@ -5,32 +6,31 @@
 
 	<?php // slider
 
-		// if($flavours)
-		// {
+		 if($flavours)
+		{
 			?>
 			<div class="loading">
-				<img src="<?php get_template_directory_uri(); ?>/assets/img/animation-background-blur.jpg">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/animation-background-blur.jpg">
 				<div class="progress">
 					<canvas class="loader"></canvas>
 				</div>
 			</div>
 			<div class="slider-wrap">
 				<div class="prev">
-					<img src="<?php get_template_directory_uri(); ?>/assets/img/btn_prev.png" />
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn_prev.png" />
 				</div>
 				<div class="next">
-					<img src="<?php echo site_url('assets/img/btn_next.png'); ?>" />
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/btn_next.png" />
 				</div>
 				<div id="animationtrigger">Pick this flavour</div>
-				<ul id="slider"><?php
-				foreach($flavours as $flavourkey => $flavour)
-				{
-					if($flavour->animation_images)
-					{
-						?><li data-target="<?php echo "#flavour{$flavourkey}"; ?>"><img src="<?php echo $flavour->animation_images[0]; ?>" alt="<?php echo $flavour->name; ?>" title="<?php echo $flavour->name; ?>" /></li><?php
-					}
-				}
-				?></ul>
+				<ul id="slider">
+				<?php
+				foreach ( $flavours as $flavour ) {
+					// debug($flavour->name)
+					?> <li data-target="<?php echo "#flavour{$flavour->prio}"; ?>"><img src="<?php echo get_template_directory_uri();?><?php echo $flavour->animation_images[0]; ?>" alt="<?php echo $flavour->name; ?>" title="<?php echo $flavour->name; ?>" /></li>
+				<?php } ?>
+				
+				</ul>
 				<div id="chooseFlavour">
 					<div style="height: 80%; width: 14%; margin: 3%;" data-go="-2"></div>
 					<div style="height: 90%; width: 16%; margin: 2%;" data-go="-1"></div>
@@ -66,35 +66,29 @@
 
 				<div id="flavourdescriptions" class="text" class="hidden">
 					<div class="prev hidden">
-						<img src="<?php get_template_directory_uri()?>/assets/img/btn_prev.png" />
+						<img src="<?php get_template_directory_uri(); ?>/assets/img/btn_prev.png" />
 					</div>
 					<div class="next hidden">
-						<img src="<?php get_template_directory_uri()?>/assets/img/btn_next.png" />
+						<img src="<?php get_template_directory_uri(); ?>/assets/img/btn_next.png" />
 					</div>
 					<ul class="panels"><?php
-						foreach($flavours as $key => $flavour)
-						{
-							?><li>
-								<div class="content">
-									<h3><?php echo $flavour->name; ?></h3>
-									<?php echo cleanBeginAndEnd($flavour->description); ?>
-								</div>
-							</li><?php
-						 }
-					?></ul>
+					foreach($flavours as $key => $flavour) {?>
+						<li>
+							<div class="content">
+								<h3><?php echo $flavour->name; ?></h3>
+								<?php echo $flavour->description; ?>
+							</div>
+						</li>
+					<?php }?>
+					</ul>
 				</div>
-
-
-
-
 			</div>
-
 
 			<div id="animation"><?php
 			foreach($flavours as $flavourkey => $flavour)
 			{
 				echo "\n\t";
-				?><ul id="<?php echo "flavour{$flavourkey}"; ?>" style="opacity: 0;" ><?php
+				?><ul id="<?php echo "flavour{$$flavour->prio}"; ?>" style="opacity: 0;" ><?php
 				if($flavour->animation_images)
 				{
 					foreach($flavour->animation_images as $key => $image)
@@ -111,5 +105,5 @@
 				?></ul><?php
 			}
 			?></div><?php
-		// }
+		}
 	?>

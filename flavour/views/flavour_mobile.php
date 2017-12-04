@@ -22,7 +22,7 @@
 							</div>
 							<div class="content">
 								<h3><?php echo $flavour->name; ?></h3>
-								<?php echo cleanBeginAndEnd($flavour->description); ?>
+								<?php echo $flavour->description; ?>
 							</div>
 						</li>
 					<?php } ?>

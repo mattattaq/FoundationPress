@@ -58,6 +58,14 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		//Enqueue javascript
 		wp_register_script('slider', get_template_directory_uri() . '/assets/js/scripts.js');
 		wp_enqueue_script('slider');
+
+		//Enqueue animation js
+		wp_register_script('animation', get_template_directory_uri() . '/assets/animation/animation.js');
+		wp_enqueue_script('animation');
+
+		//Enqueue animation js
+		wp_register_script('circleProgress', get_template_directory_uri() . '/assets/animation/circle-progress.js');
+		wp_enqueue_script('circleProgress');
 		
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you don't need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
@@ -73,9 +81,12 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	// Enqueue google font.
 	wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Titillium+Web');
 	wp_enqueue_style('googlefonts');
+	
+	//Enqueue animation styles
+	wp_register_style('animationStyle', '/assets/animation/animation.css');
+	wp_enqueue_style('animationStyle');
 
 	add_action('wp_enqueue_scripts', 'load_fonts');
-
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
 
