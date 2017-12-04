@@ -26,7 +26,7 @@
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
-	<header id="nav">
+	<div id="nav">
 		<div id="topmenu">
 			<div class="innercontainer">
 				<div id="logo">
@@ -74,7 +74,7 @@
 			</div>
 			<!-- innercontainer -->
 		</div>
-	</header><!-- #masthead -->
+	</div><!-- #masthead -->
 
 	<div class="container" id="flavours">
 		<?php // include 'slider.php'; ?>

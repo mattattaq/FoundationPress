@@ -40,6 +40,9 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		//Enqueue the slider stylesheet
 		wp_enqueue_style('slider_stylesheet', get_template_directory_uri() . '/assets/css/styles.css');
 
+		//Enqueue the animation style
+		wp_enqueue_style('animation_style', get_template_directory_uri() . '/assets/animation/animation.css');
+
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
 
@@ -66,6 +69,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		//Enqueue animation js
 		wp_register_script('circleProgress', get_template_directory_uri() . '/assets/animation/circle-progress.js');
 		wp_enqueue_script('circleProgress');
+
 		
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you don't need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
@@ -81,16 +85,15 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	// Enqueue google font.
 	wp_register_style('googlefonts', 'https://fonts.googleapis.com/css?family=Titillium+Web');
 	wp_enqueue_style('googlefonts');
-	
-	//Enqueue animation styles
-	wp_register_style('animationStyle', '/assets/animation/animation.css');
-	wp_enqueue_style('animationStyle');
 
 	add_action('wp_enqueue_scripts', 'load_fonts');
 	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
 endif;
 
 function load_fonts() {
+	
+}
+function animationStyle() {
 	
 }
 function wp_request_localize_my_json_data() {
