@@ -49,12 +49,6 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
 		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
 
-		wp_register_script('touchswipe', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js', null, null, true);
-		wp_enqueue_script('touchswipe');
-
-		wp_register_script('tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js', null, null, true);
-		wp_enqueue_script('tweenmax');
-
 		// Enqueue Founation scripts
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path('app.js'), array( 'jquery' ), '2.10.4', true );
 
@@ -63,7 +57,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		wp_enqueue_script('slider');
 
 		//Enqueue animation js
-		wp_register_script('animation', get_template_directory_uri() . '/assets/animation/animation.js');
+		wp_register_script('animation', get_template_directory_uri() . '/assets/animation/animation.js', null, null, true);
 		wp_enqueue_script('animation');
 
 		//Enqueue animation js
@@ -93,31 +87,14 @@ endif;
 function load_fonts() {
 	
 }
-function animationStyle() {
-	
-}
 function wp_request_localize_my_json_data() {
 	
 		// Helpers to define the $url path
 		//$protocol = is_ssl() ? 'https' : 'http';
 		$directory = trailingslashit( get_template_directory_uri() );
 	
-		// Define the URL
-		$url = $directory . 'flavourObject.json';
-	
-		// Register main js file to be enqueued
-		wp_register_script( 'flavourObject-json', $directory . 'flavour/views/flavourObject.js', array('jquery'), false, true  );
-	
 		// Make the request
 		$request = wp_remote_get( $url );
-	
-		// If the remote request fails, wp_remote_get() will return a WP_Error, so let’s check if the $request variable is an error:
-		if( is_wp_error( $request ) ) {
-			echo ("<script type='text/javascript'>
-			window.alert('bailed!')
-			</script>");
-			return false; // Bail early
-		}
 	
 		// Retrieve the data
 		$body = wp_remote_retrieve_body( $request );

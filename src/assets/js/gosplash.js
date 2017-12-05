@@ -7,7 +7,6 @@
 //     document.body.appendChild(js);
 // }
 
-// includeJs("../../../flavour/views/flavourObject.js");
 //offset
 $('.nav-switch').click(function () {
     var divID = '#' + this.id;
@@ -79,22 +78,6 @@ $(document).ready(function () {
             });
         });
     };
-
-    //display images
-    console.log(flavours);
-    var data = flavours;
-    document.getElementById("slider");
-    for(var i=0; i < flavours.length; i++) {
-        var source = flavours[i].animation_images[0];
-        var name = flavours[i].name;
-        var id = flavours[i].id;
-        var php = '<?php echo get_template_url()?; >'
-        var html =
-          '<li data-target="#flavour' + id + '">' +
-            '<img src="' +  php  +   source + '" alt="' + name + '" title="' + name + '" />' +
-          '</li>';
-        $('#slider').append(html);
-    }
 });
 
 

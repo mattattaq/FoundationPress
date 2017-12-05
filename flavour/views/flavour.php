@@ -39,9 +39,12 @@
 						echo $flavour->name;
 						echo '" title="';
 						echo $flavour->name;
-						echo '" /></li>';
+						echo '" />';
+						echo '</li>';
 						?> 
-					<?php } ?>
+					<?php 
+					} 
+				?>
 					
 					</ul>
 					<div id="chooseFlavour">

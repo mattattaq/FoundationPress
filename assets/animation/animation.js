@@ -1,5 +1,5 @@
 window.slideDuration = 500;
-
+console.log('animation fired');
 
 
 $(function(){
@@ -198,12 +198,12 @@ function goNext()
     }
 
     var middle = getIndexMiddle() + 1;
-    var leftClone = ((($("#slider li:last-child").index() + 1) - getIndexMiddle()) * 20) + "%";
-    var firstToLast = $("#slider li:first-child").clone().css({'margin-left': leftClone}).addClass('cloned');
+    var leftClone = ((($("#slider li:last").index() + 1) - getIndexMiddle()) * 20) + "%";
+    var firstToLast = $("#slider li:first").clone().css({'margin-left': leftClone}).addClass('cloned');
 
     $("#slider").append(firstToLast)
 
-    var remove = $("#slider li:first-child");
+    var remove = $("#slider li:first");
 
     setSlides(middle, remove);
 
@@ -217,11 +217,11 @@ function goPrev()
         return false;
     }
     var middle = getIndexMiddle();
-    var leftClone = ((($("#slider li:first-child").index() -1) - getIndexMiddle()) * 20) + "%";
-    var lastToFirst = $("#slider li:last-child").clone().addClass('cloned').css({'margin-left':leftClone});
+    var leftClone = ((($("#slider li:first").index() -1) - getIndexMiddle()) * 20) + "%";
+    var lastToFirst = $("#slider li:last").clone().addClass('cloned').css({'margin-left':leftClone});
 
     $("#slider").prepend(lastToFirst)
-    var remove = $("#slider li:last-child");
+    var remove = $("#slider li:last");
     setSlides(middle, remove);
 }
 
@@ -235,7 +235,7 @@ function initLoad(){
         // Get backgroundimg
         var background = $("header .background img");
 
-		window.images = $("#animation ul:first-child li").length * window.durationFactor;
+		window.images = $("#animation ul:first li").length * window.durationFactor;
 
 		var windowHeight = $(window).height();
 		var topMenuHeight = $("#topmenu").height();
@@ -248,12 +248,12 @@ function initLoad(){
 		$("header").css({height:animationHeight, position: 'relative'})
 
 		// Get on screen image
-		var screenImage = $("#slider li:first-child img");
+		var screenImage = $("#slider li:first img");
 
 		// Create new offscreen image to test
 		var theImage = new Image();
 		theImage.src = screenImage.attr("src");
-
+		console.log(screenImage.attr("src"), "image src");
 		// Get accurate measurements from that.
 		var imageWidth = theImage.width;
 		window.imageHeight = theImage.height;

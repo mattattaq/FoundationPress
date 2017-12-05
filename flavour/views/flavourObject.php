@@ -7,7 +7,7 @@ $flavours = [
         'description' => '<p>Go Splash Orange Pineapple includes Vitamin B3 and B6 and makes 30 glasses of refreshing orange and<br> pineapple flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_orange_pineapple.png',
-        'prio' => '6',
+        'prio' => '0',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/OrangePineapple/OrangePineapple_00000.png',
@@ -145,7 +145,7 @@ $flavours = [
         'description' => '<p>Go Splash SummerFruits includes Vitamin B3 and B6 and makes 30 glasses of refreshing SummerFruits flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_summerfruit.png',
-        'prio' => '8',
+        'prio' => '1',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/SummerFruits/SummerFruit_00000.png',
@@ -283,7 +283,7 @@ $flavours = [
         'description' => '<p>Go Splash Energy Lightning Green includes 40mg of caffeine per serving of 200ml (1.6ml Go Splash) plus other energizing ingredients to give you a boost!</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water/energy drink</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_energy_green.png',
-        'prio' => '9',
+        'prio' => '2',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/GreenThunderEnergy/GreenThunder_00000.png',
@@ -421,7 +421,7 @@ $flavours = [
         'description' => '<p>Go Splash Energy Lightning Red includes 40mg of caffeine per serving of 200ml (1.6ml Go Splash) plus other energizing ingredients to give you a boost!</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water/energy drink</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_energy_red.png',
-        'prio' => '10',
+        'prio' => '3',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/LightningRedEnergy/LightningRed_00000.png',
@@ -559,7 +559,7 @@ $flavours = [
         'description' => '<p>Go Splash Strawberry Watermelon includes Vitamin B3 and B6 and makes 30 glasses of refreshing strawberry watermelon flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_strawberry_watermelon.png',
-        'prio' => '10',
+        'prio' => '4',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/StrawberryWatermelon/StrawberryWatermelon_00000.png',
@@ -697,7 +697,7 @@ $flavours = [
         'description' => '<p>Go Splash Blackcurrant includes Vitamin B3 and B6 and makes 30 glasses of refreshing blackcurrant flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_blackcurrant.png',
-        'prio' => '2',
+        'prio' => '5',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/Blackcurrant/BlackCurrant_00000.png',
@@ -835,7 +835,7 @@ $flavours = [
         'description' => '<p>Go Splash Lemon &amp; Lime includes Vitamin B3 and B6 and makes 30 glasses of refreshing lemon and lime flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_lemonlime.png',
-        'prio' => '3',
+        'prio' => '6',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/LemonLime/LemonLime_00000.png',
@@ -973,7 +973,7 @@ $flavours = [
         'description' => '<p>Go Splash Orange includes Vitamin B3 and B6 and makes 30 glasses of refreshing orange flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_orange.png',
-        'prio' => '4',
+        'prio' => '7',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/Orange/Orange_00000.png',
@@ -1111,7 +1111,7 @@ $flavours = [
         'description' => '<p>Go Splash Apple Blackcurrant includes Vitamin B3 and B6 and makes 30 glasses of refreshing apple blackcurrant flavoured water.</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_apple_blackcurrant.png',
-        'prio' => '5',
+        'prio' => '8',
         'auteur_id' => '1',
         'animation_images' => array(
             '/assets/animation/img/AppleBlackcurrant/AppleBlackCurrent_00000.png',
