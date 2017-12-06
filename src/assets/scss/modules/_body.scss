@@ -36,6 +36,9 @@ article footer {
 .accordion-item.is-active .accordion-title {
     background-color: white !important;
 }
+.main-content-full-width header {
+    display: none;
+}
 .main-wrap, .main-wrap .main-content-full-width {
     width: 100vw;
     padding: 0;

@@ -57,7 +57,7 @@ $(document).ready(function () {
     });
     
     //if the index of the url contains /de -> load german text
-    if(window.location.href.indexOf("/de") > -1) {
+    if(window.location.href.indexOf("/de/") > -1 || window.location.href.indexOf("/de_")  > -1) {
         $("#lang-flavours").text('Geschmacks­richtungen');
         $("#lang-about").text('Über Go Splash');
         $("#lang-contact").text('Kontakt');
@@ -71,7 +71,7 @@ $(document).ready(function () {
         });
     };
     //if the index of the url contains de_ -> navigate to german index
-    if(window.location.href.indexOf("de_") > -1) {
+    if(window.location.href.indexOf("/de/") > -1 || window.location.href.indexOf("/de_")  > -1) {
         $(".nav-switch").each(function() {
             $(".nav-switch").attr('href', function(i, existingLink) {
                 return "index.php/de/" + existingLink;

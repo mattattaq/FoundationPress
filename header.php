@@ -63,7 +63,7 @@
 						</a>
 					</li>
 					<li class="languageswitch">
-						<a href="index.php">EN</a>
+						<a href="<?php echo get_permalink( get_page_by_title( 'en' ) ); ?>">EN</a>
 						<ul class="submenu">
 							<li>
 								<a href="<?php echo get_permalink( get_page_by_title( 'de' ) ); ?>">DE</a>
