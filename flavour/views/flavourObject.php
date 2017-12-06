@@ -279,7 +279,7 @@ $flavours = [
     (object)[
         'id' => '40',
         'lang_id' => '4',
-        'name' => 'Green Thunger Energy',
+        'name' => 'Green Thunder Energy',
         'description' => '<p>Go Splash Energy Lightning Green includes 40mg of caffeine per serving of 200ml (1.6ml Go Splash) plus other energizing ingredients to give you a boost!</p><ul><li>Handy 48 ml pocket size bottle</li><li>Makes 6 litres of flavoured water/energy drink</li><li>No added sugar, low calorie (less than 2 kcal per glass)</li><li>Does not need refrigeration</li><li>Helps you to drink more water and flavours water just the way you like it!</li></ul>',
         'status' => '1',
         'image' => 'bottle_energy_green.png',

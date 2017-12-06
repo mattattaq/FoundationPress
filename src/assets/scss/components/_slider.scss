@@ -168,3 +168,16 @@ $break-mobile: 320px;
     
   }
 }
+
+#flavourdescriptions {
+  .panels li{
+    left: 0 !important;
+    p {
+      margin: 0 !important;
+      max-width: none !important;
+    }
+    h3 {
+      margin: 0 !important;
+    } 
+  }
+}

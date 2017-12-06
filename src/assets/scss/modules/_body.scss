@@ -30,6 +30,9 @@ article footer {
 .accordion-item p {
     display: none;
 }
+.main-content-full-width br {
+    display: none;
+}
 .accordion-item.is-active .accordion-title {
     background-color: white !important;
 }
@@ -58,4 +61,10 @@ article footer {
 #about, #faqs {
     padding-bottom: 65px;
     padding-top: 40px;
+}
+#flavours {
+    margin-top: 100px;
+}
+.custom-footer {
+    margin-top: 125px;
 }

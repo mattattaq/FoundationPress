@@ -28,7 +28,6 @@
 					<ul id="slider">
 					<?php
 					foreach ( $flavours as $flavour ) {
-						echo debug('flavour');
 						echo '<li data-target="';
 						echo '#flavour' . $flavour->prio;
 						echo '">';

@@ -1,6 +1,4 @@
 window.slideDuration = 500;
-console.log('animation fired');
-
 
 $(function(){
 
@@ -253,7 +251,7 @@ function initLoad(){
 		// Create new offscreen image to test
 		var theImage = new Image();
 		theImage.src = screenImage.attr("src");
-		console.log(screenImage.attr("src"), "image src");
+
 		// Get accurate measurements from that.
 		var imageWidth = theImage.width;
 		window.imageHeight = theImage.height;
